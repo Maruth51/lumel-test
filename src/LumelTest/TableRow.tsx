@@ -21,7 +21,7 @@ const TableRow: React.FC<TableRowProps> = ({ row, onUpdate }) => {
     value: number,
     type: "percentage" | "value"
   ) => {
-    if (typeof value === "number" && !Number.isNaN(value)) {
+    if (typeof value === "number" && !Number.isNaN(value) && value >= 0) {
       let updateChildren: TableData["children"] = [];
       if (type === "value") {
         updateChildren = row.children.map((child) => {
